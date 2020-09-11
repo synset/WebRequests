@@ -23,7 +23,12 @@ namespace WebRequests.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult GetRequest()
+        {
+            return View();
+        }
+
+        public IActionResult PostRequest()
         {
             return View();
         }
