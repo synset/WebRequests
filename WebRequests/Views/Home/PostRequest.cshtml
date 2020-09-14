@@ -1,6 +1,41 @@
 ﻿@{
     ViewData["Title"] = "PostRequest";
 }
-<h1>Post</h1>
 
-<p>Post-Code</p>
+<div class="bakgrund container bg-light">
+    <div class="column">
+        <div class="row">
+            <a href="Home/PostRequest" class="postButton btn btn-block">Post</a> @*not button*@
+        </div>
+
+        <div class="row" style="margin-bottom: 5px">
+            <span class="input-group-text bg-secondary" style="margin-right:20px; color: white;">Mediatype</span>
+
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Choose format
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">text/json</a>
+                    <a class="dropdown-item" href="#">Another1</a>
+                    <a class="dropdown-item" href="#">Other2</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-group">
+                <span class="input-group-text col-12">Request:</span>
+            </div>
+            <div class="input-group">
+                <textarea class="form-control" aria-label="With textarea"></textarea>
+            </div>
+        </div>
+
+        <div class="row">
+            <a href="/Home/PostResult" class="executePostRequestButton btn">Execute Request</a>
+            <a href="Index" class="cancelButton btn btn-danger">Cancel</a>
+        </div>
+
+    </div>
+</div>

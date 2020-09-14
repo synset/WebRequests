@@ -1,10 +1,10 @@
 ﻿@{
-    ViewData["Title"] = "Get Request";
+    ViewData["Title"] = "Post Result";
 }
 <div class="bakgrund container bg-light">
     <div class="column">
         <div class="row">
-            <a href="/Home/GetRequest" class="getButton btn btn-block">Get</a> @*not button*@
+            <a href="/Home/PostResult" class="postButton btn btn-block">Post</a> @*not button*@
         </div>
 
         <div class="row" style="margin-bottom: 5px">
@@ -32,8 +32,17 @@
         </div>
 
         <div class="row">
-            <a href="/Home/GetResult" class="executeGetRequestButton btn btn-secondary">Execute Request</a>
-            <a href="Index" class="cancelButton btn btn-danger">Cancel</a>
+            <div class="input-group">
+                <span class="input-group-text col-12">Result:</span>
+            </div>
+            <div class="input-group">
+                <textarea class="form-control" aria-label="With textarea"></textarea>
+            </div>
+        </div>
+
+        <div class="row">
+            <a href="/Home/PostRequest" class="newPostRequestButton btn">Make new Request</a>
+            <a href="Index" class="backToHomeButton btn btn-primary">Main menu</a>
         </div>
 
     </div>

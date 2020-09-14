@@ -78,10 +78,20 @@ body {
     color:white;
 }
 
-.getButton{
+.getButton, .executeGetRequestButton, .newGetRequestButton{
     background-color: #2e86de;
 }
 
-.postButton {
-    background-color: #2e86de;
+.postButton, .executePostRequestButton, .newPostRequestButton{
+    background-color: #3c9333;
 }
+.executePostRequestButton, .executeGetRequestButton, .newPostRequestButton, .newGetRequestButton {
+    margin-right: 20px;
+}
+
+
+
+.cancelButton {
+    
+}
+

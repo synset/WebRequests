@@ -28,7 +28,17 @@ namespace WebRequests.Controllers
             return View();
         }
 
+        public IActionResult GetResult()
+        {
+            return View();
+        }
+
         public IActionResult PostRequest()
+        {
+            return View();
+        }
+
+        public IActionResult PostResult()
         {
             return View();
         }
