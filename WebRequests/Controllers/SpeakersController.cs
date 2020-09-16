@@ -14,49 +14,36 @@ namespace WebRequests.Controllers
 {
     public class SpeakersController : Controller
     {
-
-        public ActionResult GetSpeakers()
+        //GET request
+        public ActionResult GetSpeaker()
         {
             string responseFromServer;
             WebRequest request = WebRequest.Create("https://localhost:44337/api/Speakers/");    // Create a request for the URL.
             request.Credentials = CredentialCache.DefaultCredentials;           // If required by the server, set the credentials. 
 
             WebResponse response = request.GetResponse();                       // Get the response.
-            Console.WriteLine(((HttpWebResponse)response).StatusDescription);   // Display the status.
+
+            //EXTRA: make an actionresult to display status
+            //Console.WriteLine(((HttpWebResponse)response).StatusDescription); // Display the status.
 
             using (Stream dataStream = response.GetResponseStream())            // Get the stream containing content returned by the server.
             {                                                                   // The using block ensures the stream is automatically closed.
                 StreamReader reader = new StreamReader(dataStream);             // Open the stream using a StreamReader for easy access.
-                responseFromServer = reader.ReadToEnd();                 // Read the content.
+                responseFromServer = reader.ReadToEnd();                        // Read the content.
             }
 
             response.Close(); // Close the response.
 
             //Console.WriteLine(responseFromServer);   // Display the content.
 
-            return View(responseFromServer);
+            return (RedirectToAction("GetResult", new { responseFromServer }));
 
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        // POST: SpeakersController/Create
+        // POST Request
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult PostRequest(string uri, Speaker postParameters)
+        public ActionResult PostSpeaker(string uri, Speaker postParameters)
         {
             string postData = JsonConvert.SerializeObject(postParameters);
             byte[] bytes = Encoding.UTF8.GetBytes(postData);
@@ -75,87 +62,64 @@ namespace WebRequests.Controllers
         }
 
 
+        //// GET: SpeakersController
+        //public ActionResult Index()
+        //{
+        //    return View();
+        //}
 
+        //// GET: SpeakersController/Details/5
+        //public ActionResult Details(int id)
+        //{
+        //    return View();
+        //}
 
+        //// GET: SpeakersController/Create
+        //public ActionResult Create()
+        //{
+        //    return View();
+        //}
 
+        //// GET: SpeakersController/Edit/5
+        //public ActionResult Edit(int id)
+        //{
+        //    return View();
+        //}
 
+        //// POST: SpeakersController/Edit/5
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult Edit(int id, IFormCollection collection)
+        //{
+        //    try
+        //    {
+        //        return RedirectToAction(nameof(Index));
+        //    }
+        //    catch
+        //    {
+        //        return View();
+        //    }
+        //}
 
+        //// GET: SpeakersController/Delete/5
+        //public ActionResult Delete(int id)
+        //{
+        //    return View();
+        //}
 
-
-
-        // GET: SpeakersController
-        public ActionResult Index()
-        {
-            return View();
-        }
-
-        // GET: SpeakersController/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
-
-        // GET: SpeakersController/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: SpeakersController/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: SpeakersController/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: SpeakersController/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: SpeakersController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: SpeakersController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
+        //// POST: SpeakersController/Delete/5
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult Delete(int id, IFormCollection collection)
+        //{
+        //    try
+        //    {
+        //        return RedirectToAction(nameof(Index));
+        //    }
+        //    catch
+        //    {
+        //        return View();
+        //    }
+        //}
     }
 }

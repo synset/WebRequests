@@ -17,27 +17,27 @@ namespace WebRequests.Controllers
         {
             _logger = logger;
         }
-
+        //Homepage
         public IActionResult Index()
         {
             return View();
         }
-
+        //Page entering GET request
         public IActionResult GetRequest()
         {
             return View();
         }
-
+        //Page displaying GET result
         public IActionResult GetResult()
         {
             return View();
         }
-
+        //Page entering GET request
         public IActionResult PostRequest()
         {
             return View();
         }
-
+        //Page displaying POST result
         public IActionResult PostResult()
         {
             return View();

@@ -5,7 +5,7 @@
 <div class="bakgrund container bg-light">
     <div class="column">
         <div class="row">
-            <a href="/Home/GetResult" class="getButton btn btn-block">Get</a> @*not button*@
+            <a href="/Home/GetResult" class="getButton btn btn-block disabled">Get/api/speaker</a>
         </div>
 
         <div class="row" style="margin-bottom: 5px">
@@ -36,14 +36,10 @@
             <div class="input-group">
                 <span class="input-group-text col-12">Result:</span>
             </div>
-
-            @*put in the result from the request here*@
-        <div class="input-group">
-            <span class="input-group-text col-12">@Html.DisplayFor(model => model.Name)</span>
-        </div>
-
-
-
+           
+            <div class="input-group">
+                <span class="input-group-text col-12">Here will the result from GET request be displayed</span>
+            </div>
         </div>
 
         <div class="row">
