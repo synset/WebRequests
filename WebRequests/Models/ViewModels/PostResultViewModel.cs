@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 
 namespace WebRequests.Models.ViewModels
 {
-    public class GetResultViewModel
+    public class PostResultViewModel
     {
-        public IEnumerable<Speaker> Speaker { get; set; }
+        public string PostResultString { get; set; }
     }
 }
